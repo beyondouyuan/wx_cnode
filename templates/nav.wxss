@@ -1,0 +1,21 @@
+.nav-bar {
+  height: 72rpx;
+  background: #444;
+  width:100%;
+  position: fixed;
+  top:0;
+  z-index:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar-item {
+  width: 150rpx;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28rpx;
+}
+.nav-bar-active {
+  color: #80BD01;
+  font-size: 32rpx;
+}

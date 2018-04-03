@@ -1,0 +1,18 @@
+<view class="page message">
+    <view class="container" wx:if="{{verified}}">
+        <navigator
+            wx:for="{{message}}"
+            wx:key="item"
+            class="link {{item.has_read ? '': 'link-unread'}}"
+            url="/pages/topic/topic?id={{item.topic.id}}"
+        >
+            <image src="{{item.author.avatar_url}}" class="avatar" />
+            <view class="message-content">
+                <text class="author">{{item.author.loginname}}</text>
+                <text wx:if="{{item.type === 'reply'}}">回复了你的话题：</text>
+                <text wx:if="{{item.type === 'at'}}">在话题</text>
+                <view class="message-title">{{item.topic.title}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>

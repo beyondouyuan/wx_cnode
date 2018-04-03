@@ -1,0 +1,8 @@
+/*导航 nav*/
+@import '/templates/nav.wxss';
+@import '/templates/list.wxss';
+
+.topics {
+  height: 100%;
+  overflow: hidden;
+}

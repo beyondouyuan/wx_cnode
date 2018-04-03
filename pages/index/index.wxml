@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<import src="/templates/nav.wxml" />
+<import src="/templates/list.wxml" />
+<view class="pages topics">
+    <template is="nav" data="{{ navList, activeIndex }}"/>
+    <template is="list" data="{{ topicList, hidden  }}"/>
+</view>

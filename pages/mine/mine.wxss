@@ -1,0 +1,95 @@
+page,
+.page {
+    height: 100%;
+    overflow: hidden;
+}
+.mine {
+    height: 100%;
+}
+
+.user-info {
+    position: relative;
+    width: 100%;
+    height: 320rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #444444;
+}
+.avatar {
+    display: block;
+    width: 150rpx;
+    height: 150rpx;
+    margin: 20rpx;
+    margin-top: 50rpx;
+    border-radius: 50%;
+}
+
+.loginname {
+    font-size: 28rpx;
+    color: #FFFFFF
+}
+
+.view-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #EEEEEE
+}
+
+.view-item-title {
+    display: block;
+    font-size: 32rpx;
+    line-height: 64rpx;
+}
+
+.view-item-content {
+    display: block;
+    margin-top: 10rpx;
+}
+
+.link {
+    color: #80BD01;
+    text-decoration: underline;
+}
+
+.login {
+    height: 100%;
+    overflow: hidden;
+    background-color: #444444;
+}
+.login-container {
+    text-align: center;
+}
+.login-icon {
+    width: 543rpx;
+    height: 128rpx;
+    margin-top: 200rpx;
+    margin-bottom: 30rpx
+}
+.login-item.input {
+    width: 460rpx;
+    margin: 20rpx auto;
+    padding: 10rpx 15rpx;
+    border-bottom: 1rpx solid rgba(136, 136, 136, .6);
+    background-color: rgba(136, 136, 136, .6)
+}
+.login-input {
+    height: 50rpx;
+    line-height:50rpx;
+    font-size: 28rpx;
+    color: #FFFFFF;
+}
+.login-item.button {
+    width: 490rpx;
+    margin: 50rpx auto 20rpx auto
+}
+.login-btn {
+    font-size: 28rpx
+}
+.error {
+    color: red
+}

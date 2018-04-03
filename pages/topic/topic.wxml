@@ -1,0 +1,81 @@
+<page class="page detailr">
+    <view class="detail-author-container">
+        <!-- 头像 -->
+        <view class="detail-avatar-wrapper">
+            <image class="detail-avatar-img" mode="scaleToFill" src="{{detail.author.avatar_url}}" />
+        </view>
+        <!-- 作者及主题信息 -->
+        <view class="detail-info-author">
+            <view class="author-wrapper">
+                <text>{{detail.author.loginname}}</text>
+                <view class="detail-tab-item" wx:if="{{detail.tab === 'good'}}">
+                    <view class="detail-tab-item-text">精华</view>
+                </view>
+                <view class="detail-tab-item" wx:if="{{detail.tab === 'share'}}">
+                    <view class="detail-tab-item-text">分享</view>
+                </view>
+                <view class="detail-tab-item" wx:if="{{detail.tab === 'ask'}}">
+                    <view class="detail-tab-item-text">问答</view>
+                </view>
+                <view class="detail-tab-item" wx:if="{{detail.tab === 'job'}}">
+                    <view class="detail-tab-item-text">招聘</view>
+                </view>
+            </view>
+            <view class="detail-topic-time">作者 发表于{{ detail.create_at }}</view>
+        </view>
+        <!-- 收藏 -->
+        <view class="detail-topic-collect" id="{{detail.id}}" catchtap="collect" wx:if="{{detail.is_collect == true }}">取消收藏</view>
+        <view class="detail-topic-collect" id="{{detail.id}}" catchtap="collect" wx:if="{{detail.is_collect == false }}">收藏</view>
+    </view>
+    <!-- 主题头部 -->
+    <view class="detail-topic-header">
+        <view class="detail-topic-title">
+            <view class="detail-topic-tag hot" wx:if="{{detail.top == true }}">置顶</view>
+            <view class="detail-topic-tag good" wx:if="{{detail.good == true }}">精华</view>
+            {{detail.title}}
+        </view>
+    </view>
+    <!-- 主题内容 -->
+    <view class="detail-topic-content">
+        <text class="content">{{detail.content}}</text>
+    </view>
+    <!-- 评论列表 -->
+    <view class="detail-comment-container">
+        <view class="detail-comment-title">评论</view>
+        <view class="detail-comment-list">
+            <block wx:for="{{detail.replies}}" wx:key="item" wx:if="{{detail.replies.length > 0}}">
+                <view class="detail-comment-list-item" index="{{index}}" id="{{item.id}}">
+                    <view class="detail-comment-avatar">
+                        <image class="detail-comment-avatar-img" mode="scaleToFill" src="{{item.author.avatar_url}}" />
+                    </view>
+                    <view class="detailt-comment-ceil">
+                        <view class="detail-comment-info">
+                        <!-- 评论信息 -->
+                            <view class="detail-comment-info-ceil left">
+                                <text class="detail-comment-author-name">{{item.author.loginname}}</text>
+                                <text class="detail-comment-author-time">{{index + 2}}楼 发表于 {{item.create_at}}</text>
+                            </view>
+                            <view class="detail-comment-info-ceil">
+                                <image class="detail-comment-author-up" mode="scaleToFill" src="/assets/icons/good_samll.png" />
+                                <text class="detail-comment-author-ups" wx:if="{{item.ups.length > 0}}">{{item.ups.length}}</text>
+                            </view>
+                        </view>
+                        <!-- 评论内容 -->
+                        <view class="detail-comment-content">
+                            <text class="detail-comment-text">{{item.content}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{detail.replies.length < 0}}">
+                <view class="detail-comment-null">
+                    <image class="detail-comment-author-up" mode="scaleToFill" src="/assets/icons/null.png" />
+                    <text>暂无评论</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <loading hidden="{{hidden}}">
+        记载中...
+    </loading>
+</page>

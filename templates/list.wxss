@@ -1,0 +1,101 @@
+.scroll-topics-list {
+    overflow: hidden;
+    margin-top: 72rpx;
+}
+.topic-list {
+    position: relative;
+    overflow: hidden;
+    padding: 0 30rpx;
+    border-bottom: 1rpx solid #80BD01;
+}
+.topic-list-info {
+    overflow: hidden;
+    display: flex;
+    margin-top: 30rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.topic-list-info .author {
+    overflow: hidden;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.topic-list-info .item-box {
+    flex: 1;
+    margin-left: 30rpx;
+}
+
+.topic-list-info .item-box .author-info {
+    display: flex
+}
+
+.topic-list-info .item-box .author-info .username,
+.topic-list-info .item-box .author-info .time {
+    flex: 1;
+}
+
+.topic-list-info .item-box .author-info .time {
+    text-align: right;
+    color: #666666
+}
+
+.topic-list-info .item-box .topic-info {
+    height: 80rpx;
+    margin: 20rpx 0;
+    font-size: 30rpx;
+    color: #35495E;
+    /*多行文本溢出*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.topic-list-info .item-box .topic-tag {
+    display: inline-block;
+    width: 80rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    margin-right: 10rpx;
+    font-size: 28rpx;
+    color: #80BD01;
+    border: 1rpx solid #80BD01;
+}
+.topic-list-info .item-box .hot {
+    color: #E78170;
+    border: 1rpx solid #E78170;
+}
+
+.topic-list .topic-bar .bar-item {
+    display: inline-block;
+    margin-right: 50rpx;
+    line-height: 66rpx
+}
+.topic-list .topic-bar .bar-item-icon {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+.topic-list .topic-bar .bar-item-count {
+    display: inline-block;
+    vertical-align: middle;
+}
+.topic-list .bar-item-tab {
+    display: flex;
+    float: right;
+    line-height: 66rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.topic-list .bar-item-tab .bar-item-text {
+  color: #80bd01;
+}
+.loading-text {
+  font-size: 30rpx;
+}

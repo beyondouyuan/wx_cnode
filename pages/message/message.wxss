@@ -1,0 +1,40 @@
+.container {
+    color: #333333;
+    font-size: 26rpx;
+}
+.link {
+    padding: 30rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #AAAAAA;
+    border-bottom: 1rpx solid #80BD01
+}
+.link-unread {
+    background-color: #F4FCF0
+}
+
+.avatar {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    margin-right: 30rpx;
+    float: left;
+}
+
+.message-content {
+    height: 120rpx
+    line-height: 120rpx;
+}
+.author {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #80BD01;
+}
+.message-title {
+    overflow: hidden;
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    color: #444444;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

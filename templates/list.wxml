@@ -1,0 +1,63 @@
+<template name="list">
+    <scroll-view class="scroll-topics-list" scroll-y="true" style="height: 100%" bindscrolltolower="lower">
+        <view class="topic-list-wrapper">
+            <block wx:for="{{topicList}}" wx:key="item">
+                <view class="topic-list">
+                    <navigator url="/pages/topic/topic?id={{item.id}}">
+                    <!-- 头部信息 -->
+                        <view class="topic-list-info" index="{{index}}">
+                            <image class="author" src="{{item.author.avatar_url}}" />
+                            <view class="item-box">
+                                <view class="author-info">
+                                    <text class="text username">{{item.author.loginname}}</text>
+                                    <text class="text time">{{item.last_reply_at}}</text>
+                                </view>
+                                <view class="topic-info">
+                                    <view class="topic-tag hot" wx:if="{{item.top === true}}">置顶</view>
+                                    <view class="topic-tag good" wx:if="{{item.good === true}}">精华</view>
+                                    <text class="text title">{{item.title}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 底部信息 -->
+                        <view class="topic-bar">
+                            <!-- 回复 -->
+                            <view class="bar-item">
+                                <image class="bar-item-icon" src="/assets/icons/reply.png" />
+                                <view class="bar-item-count">{{item.reply_count}}</view>
+                            </view>
+                            <!-- 浏览 -->
+                            <view class="bar-item">
+                                <image class="bar-item-icon" src="/assets/icons/visit.png" />
+                                <view class="bar-item-count">{{item.visit_count}}</view>
+                            </view>
+                            <!-- 精华 -->
+                            <view class="bar-item-tab" wx:if="{{item.tab === 'good'}}">
+                                <image class="bar-item-icon" src="/assets/icons/good_samll.png" />
+                                <view class="bar-item-text">精华</view>
+                            </view>
+                            <!-- 分享 -->
+                            <view class="bar-item-tab" wx:if="{{item.tab === 'share'}}">
+                                <image class="bar-item-icon" src="/assets/icons/share_small.png" />
+                                <view class="bar-item-text">分享</view>
+                            </view>
+                            <!-- 问答 -->
+                            <view class="bar-item-tab" wx:if="{{item.tab === 'ask'}}">
+                                <image class="bar-item-icon" src="/assets/icons/ask_samll.png" />
+                                <view class="bar-item-text">问答</view>
+                            </view>
+                            <!-- 招聘 -->
+                            <view class="bar-item-tab" wx:if="{{item.tab === 'job'}}">
+                                <image class="bar-item-icon" src="/assets/icons/job_samll.png" />
+                                <view class="bar-item-text">招聘</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+    <loading class="loading" hidden="{{hidden}}">
+        <text class="loading-text">加载中...</text>
+    </loading>
+</template>

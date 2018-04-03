@@ -1,0 +1,130 @@
+.page {
+    height: 100%;
+}
+.detail-author-container {
+    padding: 30rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.detail-avatar-wrapper {
+    margin-right: 20rpx;   
+}
+
+.detail-avatar-img {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+
+.detail-info-author {
+    flex: 1;
+}
+.detail-tab-item {
+    display: inline-block;
+}
+.detail-tab-item-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    color: #80BD01
+}
+.detail-topic-collect {
+    width: 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-left: 20rpx;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 3rpx;
+    background-color: #80BD01;
+}
+.detail-topic-header {
+    display: flex;
+    padding: 30rpx;
+}
+.detail-topic-title {
+    flex: 1;
+    font-size: 32rpx;
+}
+.detail-topic-tag {
+    display: inline-block;
+    width: 80rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    text-align: center;
+    margin-right: 10rpx;
+    font-size: 26rpx;
+    color: #80BD01;
+    border: 1rpx solid #80BD01;
+}
+.hot {
+    border: 1rpx solid #E78170 !important;
+    color: #E78170 !important;
+}
+.detail-topic-content {
+    overflow-x: hidden;
+    padding: 30rpx;
+}
+.content {
+    color: #6C6C6C;
+    word-wrap: break-word;
+}
+
+.detail-comment-container {
+    overflow: hidden;
+    border-top: 1rpx solid #EEEEEE;
+}
+.detail-comment-title {
+    position: relative;
+    line-height: 80rpx;
+    padding: 0 30rpx;
+    font-size: 30rpx;
+    border: 1rpx solid #EEEEEE;
+}
+.detail-comment-list-item {
+    display: flex;
+    padding: 30rpx 0;
+    margin: 0 30rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+    background-color: #FFFFFF
+}
+.detail-comment-avatar-img {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+.detailt-comment-ceil {
+    overflow: hidden;
+    flex: 1;
+    margin-left: 20rpx;
+}
+
+.detail-comment-info {
+    display: flex;
+}
+.detail-comment-info-ceil {
+    /*flex: 1;*/
+}
+.detail-comment-info-ceil.left {
+    width: 80%;
+}
+.detail-comment-author-up {
+    width: 36rpx;
+    height: 36rpx;
+    display: inline-block;
+}
+.detail-comment-author-ups {
+    display: inline-block;
+    margin-left: 10rpx;
+    color: #888888
+}
+.detail-comment-text {
+    overflow: hidden;
+    display: block;
+    margin: 20rpx 0;
+    font-size: 28rpx;
+    word-wrap: break-word;
+}
