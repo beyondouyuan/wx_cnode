@@ -2,7 +2,28 @@
     <view class="container" wx:if="{{islogin}}">
         <view class="user-info">
             <image class="avatar" src="{{userInfo.avatar_url}}" background-size="cover" />
-            <text class="loginname">{{userInfo.loginname}}</text>
+            <view class="loginname">{{userInfo.loginname}}</view>
+            <view class="more">
+                <text class="time">注册时间：{{user.create_at}}</text>
+                <text class="score">{{user.score}}积分</text>
+            </view>
+        </view>
+        <view class="view-panel">
+            <view class="panel-item">
+                <navigator url="/pages/replies/replies" class="topic-cell topic-cell--access">
+                    <view class="text replies">最近参与的话题</view>
+                </navigator>
+            </view>
+            <view class="panel-item">
+                <navigator url="/pages/topics/topics" class="topic-cell topic-cell--access">
+                    <view class="text topics">最近发布的话题</view>
+                </navigator>
+            </view>
+            <view class="panel-item">
+                <navigator url="/pages/collect/collect" class="topic-cell topic-cell--access">
+                    <view class="text collect">我收藏的话题</view>
+                </navigator>
+            </view>
         </view>
         <view class="view-list">
             <view class="view-list-item">

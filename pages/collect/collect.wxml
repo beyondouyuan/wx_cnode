@@ -1,3 +1,4 @@
-<view class="container">
-  <text>收藏</text>
+<import src="/templates/list.wxml" />
+<view class="pages topics">
+    <template is="list" data="{{ topicList }}"/>
 </view>

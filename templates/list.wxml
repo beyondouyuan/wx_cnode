@@ -22,12 +22,12 @@
                         <!-- 底部信息 -->
                         <view class="topic-bar">
                             <!-- 回复 -->
-                            <view class="bar-item">
+                            <view class="bar-item" wx:if="{{item.reply_count}}">
                                 <image class="bar-item-icon" src="/assets/icons/reply.png" />
                                 <view class="bar-item-count">{{item.reply_count}}</view>
                             </view>
                             <!-- 浏览 -->
-                            <view class="bar-item">
+                            <view class="bar-item" wx:if="{{item.visit_count}}">
                                 <image class="bar-item-icon" src="/assets/icons/visit.png" />
                                 <view class="bar-item-count">{{item.visit_count}}</view>
                             </view>
@@ -57,7 +57,4 @@
             </block>
         </view>
     </scroll-view>
-    <loading class="loading" hidden="{{hidden}}">
-        <text class="loading-text">加载中...</text>
-    </loading>
 </template>

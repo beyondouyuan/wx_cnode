@@ -2,7 +2,7 @@
 * @Author: beyondouyuan
 * @Date:   2018-04-02 22:35:17
 * @Last Modified by:   beyondouyuan
-* @Last Modified time: 2018-04-03 20:14:11
+* @Last Modified time: 2018-04-04 01:29:39
 */
 
 import request from './request'
@@ -53,6 +53,16 @@ export const getToken = config => {
     return request(url, setting)
         .then(res => res.data)
 }
+export const getUser = config => {
+    const setting = {
+        url: parseAPI('user'),
+        method: 'GET'
+    }
+    // 合并自定义参数
+    Object.assign(setting, config)
+    return request(setting.url, setting)
+        .then(res => res.data)
+}
 
 export const getMessage = config => {
     const url = parseAPI('messages')
@@ -66,5 +76,16 @@ export const getMessage = config => {
     // 合并自定义参数
     Object.assign(setting, config)
     return request(url, setting)
+        .then(res => res.data)
+}
+
+export const getCollectList = config => {
+    const setting = {
+        url: parseAPI('listCollect'),
+        method: 'GET'
+    }
+    // 合并自定义参数
+    Object.assign(setting, config)
+    return request(setting.url, setting)
         .then(res => res.data)
 }

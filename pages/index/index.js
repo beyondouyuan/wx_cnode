@@ -1,8 +1,16 @@
 const app = getApp()
 
-import { formatTime, Format } from  '../../utils/util'
-import { getTopics } from '../../utils/api'
-const navList =[{
+import {
+  formatTime,
+  Format,
+  showLoadingToast,
+  showSuccessToast,
+  showUpdateSuccessToast
+} from '../../utils/util'
+import {
+  getTopics
+} from '../../utils/api'
+const navList = [{
   id: "all",
   title: "全部"
 }, {
@@ -22,19 +30,18 @@ const navList =[{
 Page({
   data: {
     activeIndex: 0,
-    hidden: false,
     navList: navList,
     topicList: [],
     page: 1,
     limit: 10,
     tab: 'all'
   },
-  onLoad: function () {
-     this.fetchTopics()
+  onLoad: function() {
+    this.fetchTopics()
   },
   onReachBottom: function() {
     this.lower()
-    console.log('上拉刷新' , new Date())
+    console.log('上拉刷新', new Date())
   },
   fetchTopics: function() {
     const config = {
@@ -44,9 +51,8 @@ Page({
         limit: this.data.limit
       }
     }
-    this.setData({
-      hidden: false
-    })
+    // 加载提示
+    showLoadingToast()
     // 切换分类时，始终从第一页开始请求数据，所以需要先清空原数组
     if (this.data.page == 1) {
       this.setData({
@@ -54,22 +60,26 @@ Page({
       })
     }
     getTopics(config).then(res => {
-      if (res.success) {
-        this.setData({
-          topicList: this.data.topicList.concat(res.data.map(item => { //时间格式化
-            item.last_reply_at = Format(item.last_reply_at)
-            return item
-          }))
-        })
-      }
-    })
-    .then(() => {
-      setTimeout(() => {
-        this.setData({
-          hidden: true
-        })
-      }, 1000)
-    })
+        if (res.success) {
+          this.setData({
+            topicList: this.data.topicList.concat(res.data.map(item => { //时间格式化
+              item.last_reply_at = Format(item.last_reply_at)
+              return item
+            }))
+          })
+          wx.hideLoading()
+          if (this.data.page == 1) { // 首次加载
+            showSuccessToast()
+          } else { // 下拉刷新 更新数据
+            showUpdateSuccessToast()
+          }
+        }
+      })
+      .then(() => {
+        setTimeout(() => {
+          wx.hideToast()
+        }, 1000)
+      })
   },
   handleTap: function(e) {
     const self = this

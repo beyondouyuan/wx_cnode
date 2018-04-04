@@ -1,3 +1,7 @@
-<view class="container">
-  <text>参与话题</text>
+<import src="/templates/list.wxml" />
+<view class="pages topics">
+  <template wx:if="{{topicList.length > 0}}" is="list" data="{{ topicList }}"/>
+  <view wx:else class="null-container">
+      <text class="text">你太懒了，什么也没有发布！</text>
+  </view>
 </view>

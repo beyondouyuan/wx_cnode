@@ -1,7 +1,9 @@
-page,
+page {
+    height: 100%;
+    overflow-y: scroll;
+}
 .page {
     height: 100%;
-    overflow: hidden;
 }
 .mine {
     height: 100%;
@@ -27,10 +29,42 @@ page,
 }
 
 .loginname {
-    font-size: 28rpx;
+    font-size: 32rpx;
     color: #FFFFFF
 }
-
+.more {
+    font-size: 28rpx
+}
+.more .score {
+    margin-left: 30rpx;
+}
+.panel-item {
+    padding: 30rpx;
+    border-bottom: 1rpx solid #EEEEEE
+}
+.panel-item .text {
+    font-size: 32rpx;
+    color: #76767A
+}
+.topic-cell {
+    height: 70rpx;
+    line-height: 70rpx;
+    position: relative;
+}
+.topic-cell:after {
+    color: #76767A;
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #656565;
+    border-right: 1px solid #656565;
+    transform: rotate(45deg);
+}
 .view-list-item {
     display: flex;
     flex-direction: column;
@@ -43,12 +77,15 @@ page,
 .view-item-title {
     display: block;
     font-size: 32rpx;
+    color: #76767A;
     line-height: 64rpx;
 }
 
 .view-item-content {
     display: block;
     margin-top: 10rpx;
+    font-size: 28rpx;
+    color: #76767A
 }
 
 .link {

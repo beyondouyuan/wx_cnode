@@ -1,0 +1,10 @@
+@import '/templates/list.wxss';
+
+.topics {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scroll-topics-list {
+    margin-top: 0 !important
+}

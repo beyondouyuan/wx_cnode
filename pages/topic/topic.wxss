@@ -1,3 +1,5 @@
+/*引入wxParse*/
+@import '../../wxParse/wxParse.wxss';
 .page {
     height: 100%;
 }
@@ -9,7 +11,7 @@
 }
 
 .detail-avatar-wrapper {
-    margin-right: 20rpx;   
+    margin-right: 20rpx;
 }
 
 .detail-avatar-img {
@@ -21,13 +23,15 @@
 .detail-info-author {
     flex: 1;
 }
+.author-wrapper {
+    display: flex;
+    align-items: center;
+}
 .detail-tab-item {
-    display: inline-block;
+
 }
 .detail-tab-item-text {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10rpx;
+    margin-left: 30rpx;
     font-size: 28rpx;
     color: #80BD01
 }
@@ -104,12 +108,13 @@
 
 .detail-comment-info {
     display: flex;
+    flex-direction: column;
 }
 .detail-comment-info-ceil {
-    /*flex: 1;*/
+    flex: 1;
 }
-.detail-comment-info-ceil.left {
-    width: 80%;
+.detail-comment-info-ceil.top {
+    margin-bottom: 20rpx;
 }
 .detail-comment-author-up {
     width: 36rpx;

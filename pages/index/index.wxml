@@ -3,5 +3,5 @@
 <import src="/templates/list.wxml" />
 <view class="pages topics">
     <template is="nav" data="{{ navList, activeIndex }}"/>
-    <template is="list" data="{{ topicList, hidden  }}"/>
+    <template is="list" data="{{ topicList }}"/>
 </view>

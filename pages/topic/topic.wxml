@@ -1,4 +1,6 @@
-<page class="page detailr">
+<!-- 引入wxParse解析html -->
+<import src="/wxParse/wxParse.wxml" />
+<page class="page detailr" wx:if="{{isShow}}">
     <view class="detail-author-container">
         <!-- 头像 -->
         <view class="detail-avatar-wrapper">
@@ -37,7 +39,8 @@
     </view>
     <!-- 主题内容 -->
     <view class="detail-topic-content">
-        <text class="content">{{detail.content}}</text>
+        <!-- <text class="content">{{detail.content}}</text> -->
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
     </view>
     <!-- 评论列表 -->
     <view class="detail-comment-container">
@@ -51,7 +54,7 @@
                     <view class="detailt-comment-ceil">
                         <view class="detail-comment-info">
                         <!-- 评论信息 -->
-                            <view class="detail-comment-info-ceil left">
+                            <view class="detail-comment-info-ceil top">
                                 <text class="detail-comment-author-name">{{item.author.loginname}}</text>
                                 <text class="detail-comment-author-time">{{index + 2}}楼 发表于 {{item.create_at}}</text>
                             </view>
@@ -62,7 +65,9 @@
                         </view>
                         <!-- 评论内容 -->
                         <view class="detail-comment-content">
-                            <text class="detail-comment-text">{{item.content}}</text>
+                            <view class="detail-comment-text">
+                                <template is="wxParse" data="{{wxParseData:replies.nodes}}"></template>
+                            </view>
                         </view>
                     </view>
                 </view>
@@ -75,7 +80,4 @@
             </block>
         </view>
     </view>
-    <loading hidden="{{hidden}}">
-        记载中...
-    </loading>
 </page>

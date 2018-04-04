@@ -7,6 +7,7 @@ App({
     wx.setStorageSync('logs', logs)
   },
   globalData: {
-    userInfo: null
+    userInfo: null, // 登陆信息,
+    user: null // 用户详情
   }
 })
